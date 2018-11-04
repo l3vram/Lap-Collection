@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480578E3218E55B9005C30B5 /* LCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E2218E55B9005C30B5 /* LCViewModel.swift */; };
+		480578E5218EC36A005C30B5 /* LCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E4218EC36A005C30B5 /* LCTableViewCell.swift */; };
+		480578E9218ED643005C30B5 /* LCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E8218ED643005C30B5 /* LCDetailViewController.swift */; };
 		48F0715F218E37A3006C42C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F0715E218E37A3006C42C2 /* AppDelegate.swift */; };
 		48F07161218E37A3006C42C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07160218E37A3006C42C2 /* ViewController.swift */; };
 		48F07164218E37A3006C42C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F07162218E37A3006C42C2 /* Main.storyboard */; };
 		48F07166218E37A6006C42C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F07165218E37A6006C42C2 /* Assets.xcassets */; };
 		48F07169218E37A6006C42C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F07167218E37A6006C42C2 /* LaunchScreen.storyboard */; };
+		48F07171218E5253006C42C2 /* LCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07170218E5253006C42C2 /* LCModel.swift */; };
+		D1722450980DF51FA5158FB3 /* Pods_Lap_Collection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B1137704086161DE42A4A8 /* Pods_Lap_Collection.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37E243E8035E567280F15695 /* Pods-Lap Collection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lap Collection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lap Collection/Pods-Lap Collection.debug.xcconfig"; sourceTree = "<group>"; };
+		480578E2218E55B9005C30B5 /* LCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCViewModel.swift; sourceTree = "<group>"; };
+		480578E4218EC36A005C30B5 /* LCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCTableViewCell.swift; sourceTree = "<group>"; };
+		480578E8218ED643005C30B5 /* LCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDetailViewController.swift; sourceTree = "<group>"; };
 		48F0715B218E37A3006C42C2 /* Lap Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lap Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F0715E218E37A3006C42C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48F07160218E37A3006C42C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,9 @@
 		48F07165218E37A6006C42C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F07168218E37A6006C42C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F0716A218E37A6006C42C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F07170218E5253006C42C2 /* LCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCModel.swift; sourceTree = "<group>"; };
+		6B29C3875456E3EEF6EF43CD /* Pods-Lap Collection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lap Collection.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lap Collection/Pods-Lap Collection.release.xcconfig"; sourceTree = "<group>"; };
+		C9B1137704086161DE42A4A8 /* Pods_Lap_Collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lap_Collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1722450980DF51FA5158FB3 /* Pods_Lap_Collection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				48F0715D218E37A3006C42C2 /* Lap Collection */,
 				48F0715C218E37A3006C42C2 /* Products */,
+				8CFEBD18DF45495D5B372B41 /* Pods */,
+				69E55F904B1FA7F7C6C2355F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +71,33 @@
 			children = (
 				48F0715E218E37A3006C42C2 /* AppDelegate.swift */,
 				48F07160218E37A3006C42C2 /* ViewController.swift */,
+				48F07170218E5253006C42C2 /* LCModel.swift */,
+				480578E2218E55B9005C30B5 /* LCViewModel.swift */,
+				480578E4218EC36A005C30B5 /* LCTableViewCell.swift */,
+				480578E8218ED643005C30B5 /* LCDetailViewController.swift */,
 				48F07162218E37A3006C42C2 /* Main.storyboard */,
 				48F07165218E37A6006C42C2 /* Assets.xcassets */,
 				48F07167218E37A6006C42C2 /* LaunchScreen.storyboard */,
 				48F0716A218E37A6006C42C2 /* Info.plist */,
 			);
 			path = "Lap Collection";
+			sourceTree = "<group>";
+		};
+		69E55F904B1FA7F7C6C2355F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9B1137704086161DE42A4A8 /* Pods_Lap_Collection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CFEBD18DF45495D5B372B41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37E243E8035E567280F15695 /* Pods-Lap Collection.debug.xcconfig */,
+				6B29C3875456E3EEF6EF43CD /* Pods-Lap Collection.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48F0716D218E37A6006C42C2 /* Build configuration list for PBXNativeTarget "Lap Collection" */;
 			buildPhases = (
+				03EDEC7D15B5E6A58C4947D8 /* [CP] Check Pods Manifest.lock */,
 				48F07157218E37A3006C42C2 /* Sources */,
 				48F07158218E37A3006C42C2 /* Frameworks */,
 				48F07159218E37A3006C42C2 /* Resources */,
+				121399A5B206F6299CBBC8B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +168,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03EDEC7D15B5E6A58C4947D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lap Collection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		121399A5B206F6299CBBC8B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lap Collection/Pods-Lap Collection-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lap Collection/Pods-Lap Collection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48F07157218E37A3006C42C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480578E9218ED643005C30B5 /* LCDetailViewController.swift in Sources */,
+				48F07171218E5253006C42C2 /* LCModel.swift in Sources */,
 				48F07161218E37A3006C42C2 /* ViewController.swift in Sources */,
+				480578E5218EC36A005C30B5 /* LCTableViewCell.swift in Sources */,
 				48F0715F218E37A3006C42C2 /* AppDelegate.swift in Sources */,
+				480578E3218E55B9005C30B5 /* LCViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,10 +363,13 @@
 		};
 		48F0716E218E37A6006C42C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37E243E8035E567280F15695 /* Pods-Lap Collection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DZ7NP2R3U;
 				INFOPLIST_FILE = "Lap Collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +383,13 @@
 		};
 		48F0716F218E37A6006C42C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B29C3875456E3EEF6EF43CD /* Pods-Lap Collection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6DZ7NP2R3U;
 				INFOPLIST_FILE = "Lap Collection/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
