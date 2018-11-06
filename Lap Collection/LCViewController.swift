@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LCViewController: UIViewController {
     
     var table = UITableView()
     var lapdata: [Lap]?
@@ -21,6 +21,9 @@ class ViewController: UIViewController {
         navigationItem.title = "Laptops Collection"
         table.delegate = self
         table.dataSource = self
+        let image = UIImageView(image: UIImage(named: "placeholder")?.af_imageRoundedIntoCircle())
+        image.contentMode = .scaleAspectFit
+        navigationItem.titleView =  image
         table.register(LCTableViewCell.self, forCellReuseIdentifier: Const.cellid)
         view.addSubview(table)
         table.position(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
@@ -37,8 +40,8 @@ class ViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Const.showDetail{
-            let det = segue.destination as! LCDetailViewController
+        if segue.identifier == Const.showDetail1{
+            let det = segue.destination as! LCDCollectionViewController
             if let row =  self.table.indexPathForSelectedRow?.row{
                 det.lap = lapdata?[row]
             }
@@ -46,7 +49,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension LCViewController: UITableViewDelegate, UITableViewDataSource{
     
     func alert(tittle: String, message: String){
         let alert = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
@@ -55,7 +58,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Const.showDetail, sender: self)
+        performSegue(withIdentifier: Const.showDetail1, sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

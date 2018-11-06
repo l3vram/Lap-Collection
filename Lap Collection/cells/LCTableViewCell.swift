@@ -18,8 +18,8 @@ class LCTableViewCell: UITableViewCell {
             detailTextLabel?.text = templap.description.prefix(100) + "..."
             if let url = templap.image{
                 let size1 = CGSize(width: 75.0, height: 75.0)
-                let filter = AspectScaledToFillSizeCircleFilter(size: size1)
-                let placeholder = UIImage(named: Const.placeholder)?.af_imageAspectScaled(toFit: size1).af_imageRoundedIntoCircle()
+                let filter = AspectScaledToFillSizeWithRoundedCornersFilter(size: size1, radius: 5)
+                let placeholder = UIImage(named: Const.placeholder)?.af_imageAspectScaled(toFit: size1).af_imageRounded(withCornerRadius: 5)
                 if let url = URL(string: url){
                 imageView?.af_setImage(withURL: url, placeholderImage: placeholder, filter: filter,  imageTransition: .crossDissolve(0.2))
                 }
@@ -45,7 +45,7 @@ class LCTableViewCell: UITableViewCell {
         detailTextLabel?.numberOfLines = 0
         detailTextLabel?.textColor = UIColor.darkGray
         textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        textLabel?.textColor = UIColor(red: 0.2431372549, green: 0.7647058824, blue: 0.8392156863, alpha: 1)
+        textLabel?.textColor = DPTheme.color(hex: 0x43a3a8, alpha: 1.0)
         textLabel?.backgroundColor = .blue
         textLabel?.layer.cornerRadius = 5
         textLabel?.clipsToBounds = true

@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		480578E3218E55B9005C30B5 /* LCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E2218E55B9005C30B5 /* LCViewModel.swift */; };
 		480578E5218EC36A005C30B5 /* LCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E4218EC36A005C30B5 /* LCTableViewCell.swift */; };
-		480578E9218ED643005C30B5 /* LCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480578E8218ED643005C30B5 /* LCDetailViewController.swift */; };
+		481B7112218F6E050085D69A /* LCImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B7111218F6E050085D69A /* LCImageCollectionViewCell.swift */; };
+		481B7116218F76000085D69A /* LCContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481B7115218F76000085D69A /* LCContentCollectionViewCell.swift */; };
+		48BABE90218FD5FC007AA85B /* LCDCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BABE8F218FD5FC007AA85B /* LCDCollectionViewController.swift */; };
+		48E775CD21921A7F0060DAA0 /* DPTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E775CC21921A7F0060DAA0 /* DPTheme.swift */; };
 		48F0715F218E37A3006C42C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F0715E218E37A3006C42C2 /* AppDelegate.swift */; };
-		48F07161218E37A3006C42C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07160218E37A3006C42C2 /* ViewController.swift */; };
+		48F07161218E37A3006C42C2 /* LCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F07160218E37A3006C42C2 /* LCViewController.swift */; };
 		48F07164218E37A3006C42C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F07162218E37A3006C42C2 /* Main.storyboard */; };
 		48F07166218E37A6006C42C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F07165218E37A6006C42C2 /* Assets.xcassets */; };
 		48F07169218E37A6006C42C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F07167218E37A6006C42C2 /* LaunchScreen.storyboard */; };
@@ -23,10 +26,13 @@
 		37E243E8035E567280F15695 /* Pods-Lap Collection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lap Collection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lap Collection/Pods-Lap Collection.debug.xcconfig"; sourceTree = "<group>"; };
 		480578E2218E55B9005C30B5 /* LCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCViewModel.swift; sourceTree = "<group>"; };
 		480578E4218EC36A005C30B5 /* LCTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCTableViewCell.swift; sourceTree = "<group>"; };
-		480578E8218ED643005C30B5 /* LCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDetailViewController.swift; sourceTree = "<group>"; };
+		481B7111218F6E050085D69A /* LCImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		481B7115218F76000085D69A /* LCContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		48BABE8F218FD5FC007AA85B /* LCDCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDCollectionViewController.swift; sourceTree = "<group>"; };
+		48E775CC21921A7F0060DAA0 /* DPTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTheme.swift; sourceTree = "<group>"; };
 		48F0715B218E37A3006C42C2 /* Lap Collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lap Collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F0715E218E37A3006C42C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48F07160218E37A3006C42C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48F07160218E37A3006C42C2 /* LCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCViewController.swift; sourceTree = "<group>"; };
 		48F07163218E37A3006C42C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48F07165218E37A6006C42C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F07168218E37A6006C42C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48BABE91218FFF4C007AA85B /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				480578E4218EC36A005C30B5 /* LCTableViewCell.swift */,
+				481B7111218F6E050085D69A /* LCImageCollectionViewCell.swift */,
+				481B7115218F76000085D69A /* LCContentCollectionViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		48F07152218E37A3006C42C2 = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +85,13 @@
 		48F0715D218E37A3006C42C2 /* Lap Collection */ = {
 			isa = PBXGroup;
 			children = (
+				48BABE91218FFF4C007AA85B /* cells */,
 				48F0715E218E37A3006C42C2 /* AppDelegate.swift */,
-				48F07160218E37A3006C42C2 /* ViewController.swift */,
+				48F07160218E37A3006C42C2 /* LCViewController.swift */,
 				48F07170218E5253006C42C2 /* LCModel.swift */,
 				480578E2218E55B9005C30B5 /* LCViewModel.swift */,
-				480578E4218EC36A005C30B5 /* LCTableViewCell.swift */,
-				480578E8218ED643005C30B5 /* LCDetailViewController.swift */,
+				48BABE8F218FD5FC007AA85B /* LCDCollectionViewController.swift */,
+				48E775CC21921A7F0060DAA0 /* DPTheme.swift */,
 				48F07162218E37A3006C42C2 /* Main.storyboard */,
 				48F07165218E37A6006C42C2 /* Assets.xcassets */,
 				48F07167218E37A6006C42C2 /* LaunchScreen.storyboard */,
@@ -214,10 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				480578E9218ED643005C30B5 /* LCDetailViewController.swift in Sources */,
 				48F07171218E5253006C42C2 /* LCModel.swift in Sources */,
-				48F07161218E37A3006C42C2 /* ViewController.swift in Sources */,
+				48E775CD21921A7F0060DAA0 /* DPTheme.swift in Sources */,
+				48F07161218E37A3006C42C2 /* LCViewController.swift in Sources */,
+				481B7116218F76000085D69A /* LCContentCollectionViewCell.swift in Sources */,
+				481B7112218F6E050085D69A /* LCImageCollectionViewCell.swift in Sources */,
 				480578E5218EC36A005C30B5 /* LCTableViewCell.swift in Sources */,
+				48BABE90218FD5FC007AA85B /* LCDCollectionViewController.swift in Sources */,
 				48F0715F218E37A3006C42C2 /* AppDelegate.swift in Sources */,
 				480578E3218E55B9005C30B5 /* LCViewModel.swift in Sources */,
 			);

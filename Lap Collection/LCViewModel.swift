@@ -10,10 +10,15 @@ import Foundation
 import Alamofire
 
 enum Const{
-static let cellid = "cellid"
-static let url = "http://private-f0eea-mobilegllatam.apiary-mock.com/list"
-static let showDetail = "showDetail"
-static let placeholder = "placeholder"
+    static let cellid = "cellid"
+    static let cellidImage = "cellidImage"
+    static let cellidTitle = "cellidTitle"
+    static let cellidContent = "cellidContent"
+    static let url = "http://private-f0eea-mobilegllatam.apiary-mock.com/list"
+    static let showDetail = "showDetail"
+    static let showDetail1 = "showDetail1"
+    static let placeholder = "placeholder"
+    static let reuseIdentifier = "Cell"
 }
 
 func getLapData(completion: @escaping ([Lap]?,Error?)-> Void){
@@ -55,7 +60,23 @@ extension UIView{
         if size.height != 0 {
             heightAnchor.constraint(equalToConstant: size.height).isActive = true
         }
-        
-        
+    }    
+    func sizeEqual(to view: UIView){
+        widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    }
+    func fillAll() {
+        position(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
+    }
+    
+    func styleCell(){
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 1.0
+        self.layer.masksToBounds = false
+        self.clipsToBounds = false
+        self.layer.cornerRadius = 15
     }
 }
+

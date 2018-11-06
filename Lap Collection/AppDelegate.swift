@@ -15,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let mainColor: UIColor = DPTheme.color(hex: 0x43a3a8, alpha: 1.0)
+        let white: UIColor = .white
+        let fontName = "Symbol"
+        
+        DPTheme.setupTheme(
+            maincolor: mainColor,
+            secondaryColor: white,
+            fontName: fontName,
+            lightStatusBar: true)
+
         return true
     }
 
