@@ -11,18 +11,15 @@ import UIKit
 class LCImageCollectionViewCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "placeholder"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints =  false
         return imageView
     }()
     
-    var stringurl: String? {
+    var lapCollection: LapCollectionViewModel!{
         didSet {
-            guard let tempurl = stringurl else {return}
-            if let url = URL(string: tempurl){
-                imageView.af_setImage(withURL: url, imageTransition: .crossDissolve(0.2))
-            }
+            imageView.image = lapCollection.image.image
         }
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class LCViewController: UIViewController {
     
     var table = UITableView()
-    var lapdata: [Lap]?
+    var lapdata = [LapCollectionViewModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         initComp()
@@ -19,33 +19,39 @@ class LCViewController: UIViewController {
     
     func initComp(){
         navigationItem.title = "Laptops Collection"
-        table.delegate = self
-        table.dataSource = self
         let image = UIImageView(image: UIImage(named: "placeholder")?.af_imageRoundedIntoCircle())
         image.contentMode = .scaleAspectFit
         navigationItem.titleView =  image
-        table.register(LCTableViewCell.self, forCellReuseIdentifier: Const.cellid)
-        view.addSubview(table)
-        table.position(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
-        
-        getLapData { (data, error) in
-            if let temp = data{self.lapdata = temp}
-            else{self.alert(tittle: "Info", message: error?.localizedDescription ?? "")}
+        initTable()
+        Service.shared.getLapData { (data, error) in
+            if let error = error{self.alert(tittle: "Info", message: error.localizedDescription)
+            }
+            self.lapdata = data?.map({return LapCollectionViewModel(model: $0)}) ?? []
             DispatchQueue.main.async {
                 self.table.reloadData()
             }
+            
         }
     }
     
-    // MARK: - Navigation
-    
+    // MARK: - Navigation 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Const.showDetail1{
             let det = segue.destination as! LCDCollectionViewController
             if let row =  self.table.indexPathForSelectedRow?.row{
-                det.lap = lapdata?[row]
+                det.lapCollectionViewModel = lapdata[row]
             }
         }
+    }
+    
+    func initTable(){
+        table.delegate = self
+        table.dataSource = self
+        table.register(LCTableViewCell.self, forCellReuseIdentifier: Const.cellid)
+        view.addSubview(table)
+        table.estimatedRowHeight = 50
+        table.rowHeight = UITableView.automaticDimension
+        table.position(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
     }
 }
 
@@ -61,16 +67,13 @@ extension LCViewController: UITableViewDelegate, UITableViewDataSource{
         performSegue(withIdentifier: Const.showDetail1, sender: self)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lapdata?.count ?? 0
+        return lapdata.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: Const.cellid, for: indexPath) as! LCTableViewCell
-        cell.lap = lapdata?[indexPath.row]
+        cell.lapCollection = lapdata[indexPath.row]
         return cell
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class LCDCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
-    var lap: Lap?
+    var lapCollectionViewModel: LapCollectionViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class LCDCollectionViewController: UICollectionViewController , UICollectionView
     func initView(){
         // - nav
         navigationItem.largeTitleDisplayMode = .never
-        title = lap?.title
+        title = lapCollectionViewModel?.title
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -37,11 +37,11 @@ class LCDCollectionViewController: UICollectionViewController , UICollectionView
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0{
             let cell = self.collectionView!.dequeueReusableCell(withReuseIdentifier: Const.cellidImage, for: indexPath) as! LCImageCollectionViewCell
-            cell.stringurl = lap?.image
+            cell.lapCollection = lapCollectionViewModel
             return cell
         }
         let cell = self.collectionView!.dequeueReusableCell(withReuseIdentifier: Const.cellidContent, for: indexPath) as! LCContentCollectionViewCell
-        cell.stringCont = lap?.description
+        cell.lapCollection = lapCollectionViewModel
         return cell
     }
     
@@ -63,7 +63,7 @@ class LCDCollectionViewController: UICollectionViewController , UICollectionView
         let size = CGSize(width: aprox, height: 2000)
         let atrib = [kCTFontAttributeName: UIFont.systemFont(ofSize: 15)]
         var estimateheigth = CGRect()
-        if let temp = lap?.description{
+        if let temp = lapCollectionViewModel?.description{
             estimateheigth = NSString(string: temp).boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: atrib as [NSAttributedString.Key : Any], context: nil)
         }
         return estimateheigth.height

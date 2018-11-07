@@ -10,20 +10,12 @@ import UIKit
 import AlamofireImage
 
 class LCTableViewCell: UITableViewCell {
-
-    var lap: Lap? {
+   
+    var lapCollection: LapCollectionViewModel!{
         didSet {
-            guard let templap = lap else {return}
-            textLabel?.text = templap.title
-            detailTextLabel?.text = templap.description.prefix(100) + "..."
-            if let url = templap.image{
-                let size1 = CGSize(width: 75.0, height: 75.0)
-                let filter = AspectScaledToFillSizeWithRoundedCornersFilter(size: size1, radius: 5)
-                let placeholder = UIImage(named: Const.placeholder)?.af_imageAspectScaled(toFit: size1).af_imageRounded(withCornerRadius: 5)
-                if let url = URL(string: url){
-                imageView?.af_setImage(withURL: url, placeholderImage: placeholder, filter: filter,  imageTransition: .crossDissolve(0.2))
-                }
-            }
+            textLabel?.text = lapCollection.title
+            detailTextLabel?.text = String(lapCollection.description.prefix(100))
+            imageView?.image = lapCollection.image.image?.af_imageRounded(withCornerRadius: 5)
         }
     }
 

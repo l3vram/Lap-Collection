@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Lap: Decodable{
+struct LapCollection: Decodable{
     var title: String
     var description: String
-    var image: String?
+    var image: String
 }

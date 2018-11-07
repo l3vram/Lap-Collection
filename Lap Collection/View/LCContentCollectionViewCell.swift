@@ -23,10 +23,9 @@ class LCContentCollectionViewCell: UICollectionViewCell {
         return contentView
     }()
     
-    var stringCont: String? {
+    var lapCollection: LapCollectionViewModel!{
         didSet {
-            guard let tempcont = stringCont else {return}
-            contentView1.text = tempcont
+            contentView1.text = lapCollection.description
         }
     }
     

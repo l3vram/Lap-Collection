@@ -21,23 +21,6 @@ enum Const{
     static let reuseIdentifier = "Cell"
 }
 
-func getLapData(completion: @escaping ([Lap]?,Error?)-> Void){
-    var lapdata: [Lap]?
-    Alamofire.request(Const.url).responseData{response in
-        do{
-            switch response.result{
-            case .success(let data):
-                lapdata = try JSONDecoder().decode([Lap].self, from: data)
-                completion(lapdata,nil)
-            case .failure(let error):
-                completion(nil,error)
-            }
-        }catch let error{
-            completion(nil,error)
-        }
-    }
-}
-
 extension UIView{
     
     func position(top: NSLayoutYAxisAnchor?,leading: NSLayoutXAxisAnchor?,bottom: NSLayoutYAxisAnchor?,trailing: NSLayoutXAxisAnchor?,padding: UIEdgeInsets = .zero, size: CGSize = .zero)  {
