@@ -19,18 +19,18 @@ class LCViewController: UIViewController {
     
     func initComp(){
         navigationItem.title = "Laptops Collection"
-        let image = UIImageView(image: UIImage(named: "placeholder")?.af_imageRoundedIntoCircle())
+        let image = UIImageView()
         image.contentMode = .scaleAspectFit
         navigationItem.titleView =  image
         initTable()
         Service.shared.getLapData { (data, error) in
             if let error = error{self.alert(tittle: "Info", message: error.localizedDescription)
+            }else{
+                self.lapdata = data?.map({return LapCollectionViewModel(model: $0)}) ?? []
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
             }
-            self.lapdata = data?.map({return LapCollectionViewModel(model: $0)}) ?? []
-            DispatchQueue.main.async {
-                self.table.reloadData()
-            }
-            
         }
     }
     
@@ -48,9 +48,8 @@ class LCViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.register(LCTableViewCell.self, forCellReuseIdentifier: Const.cellid)
+        table.separatorInset = UIEdgeInsets(top: 10, left: 24, bottom: 10, right: 24)
         view.addSubview(table)
-        table.estimatedRowHeight = 50
-        table.rowHeight = UITableView.automaticDimension
         table.position(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
     }
 }
@@ -75,6 +74,10 @@ extension LCViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = table.dequeueReusableCell(withIdentifier: Const.cellid, for: indexPath) as! LCTableViewCell
         cell.lapCollection = lapdata[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 

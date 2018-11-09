@@ -17,8 +17,7 @@ class LCContentCollectionViewCell: UICollectionViewCell {
         contentView.isScrollEnabled = false
         contentView.adjustsFontForContentSizeCategory = true
         contentView.textContainerInset = UIEdgeInsets.init(top: 10, left: 5, bottom: 0, right: 5)
-        contentView.textAlignment = .justified
-        
+        contentView.textAlignment = .justified  
         contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()

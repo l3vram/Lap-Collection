@@ -19,7 +19,9 @@ class LCImageCollectionViewCell: UICollectionViewCell {
     
     var lapCollection: LapCollectionViewModel!{
         didSet {
-            imageView.image = lapCollection.image.image
+            if let url = URL(string: lapCollection.imageUrl){
+                imageView.af_setImage(withURL: url, placeholderImage: UIImage(named: "placeholder"), imageTransition: .crossDissolve(0.2))
+            }
         }
     }
     
@@ -28,9 +30,10 @@ class LCImageCollectionViewCell: UICollectionViewCell {
         addSubview(imageView)
         imageView.fillAll()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
 }
+

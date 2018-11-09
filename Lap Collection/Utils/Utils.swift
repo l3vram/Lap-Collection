@@ -15,7 +15,6 @@ enum Const{
     static let cellidTitle = "cellidTitle"
     static let cellidContent = "cellidContent"
     static let url = "http://private-f0eea-mobilegllatam.apiary-mock.com/list"
-    static let showDetail = "showDetail"
     static let showDetail1 = "showDetail1"
     static let placeholder = "placeholder"
     static let reuseIdentifier = "Cell"

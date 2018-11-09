@@ -79,6 +79,8 @@
 		48EC61DD2193490100823217 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				48F07160218E37A3006C42C2 /* LCViewController.swift */,
+				48BABE8F218FD5FC007AA85B /* LCDCollectionViewController.swift */,
 				48EC61DE2193492C00823217 /* LapCollectionViewModel.swift */,
 			);
 			path = ViewModel;
@@ -99,15 +101,6 @@
 				48E775CC21921A7F0060DAA0 /* DPTheme.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		48EC61E221934F7F00823217 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				48F07160218E37A3006C42C2 /* LCViewController.swift */,
-				48BABE8F218FD5FC007AA85B /* LCDCollectionViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		48F07152218E37A3006C42C2 = {
@@ -135,7 +128,6 @@
 				48BABE91218FFF4C007AA85B /* View */,
 				48EC61DD2193490100823217 /* ViewModel */,
 				48EC61E0219349DF00823217 /* Model */,
-				48EC61E221934F7F00823217 /* Controller */,
 				48EC61DA219346B500823217 /* Service */,
 				48EC61E121934F2D00823217 /* Utils */,
 				48F07162218E37A3006C42C2 /* Main.storyboard */,

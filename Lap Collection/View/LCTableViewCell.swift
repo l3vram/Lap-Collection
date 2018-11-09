@@ -10,15 +10,15 @@ import UIKit
 import AlamofireImage
 
 class LCTableViewCell: UITableViewCell {
-   
+    
     var lapCollection: LapCollectionViewModel!{
         didSet {
             textLabel?.text = lapCollection.title
             detailTextLabel?.text = String(lapCollection.description.prefix(100))
-            imageView?.image = lapCollection.image.image?.af_imageRounded(withCornerRadius: 5)
+            setImageLC(url: lapCollection.imageUrl)
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,6 +32,15 @@ class LCTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setImageLC(url: String){
+        if let url = URL(string: url){
+            let size = CGSize(width: 75, height: 75)
+            let filter = AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 5)
+            let placeholder = UIImage(named: "placeholder")?.af_imageAspectScaled(toFill: size)
+            imageView?.af_setImage(withURL: url, placeholderImage: placeholder, filter: filter, imageTransition: .crossDissolve(0.2))
+        }
+    }
+    
     func initStyles(){
         accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         detailTextLabel?.numberOfLines = 0
@@ -42,5 +51,10 @@ class LCTableViewCell: UITableViewCell {
         textLabel?.layer.cornerRadius = 5
         textLabel?.clipsToBounds = true
     }
-
+    
 }
+
+
+    
+
+

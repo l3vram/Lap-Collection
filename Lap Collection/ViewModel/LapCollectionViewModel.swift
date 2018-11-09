@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
+
 struct LapCollectionViewModel {
     
     let title: String
     let description: String
-    let image: UIImageView
+    var imageUrl: String
     
     init(model: LapCollection) {
         self.title = model.title
         self.description = model.description
-        let url = URL(fileURLWithPath: model.image)
-        self.image.af_setImage(withURL: url)
-        
+        self.imageUrl = model.image
+       
     }
 }
